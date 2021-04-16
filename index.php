@@ -35,7 +35,7 @@ async function main(){
 
 async function getTable(){
   const response = await fetch('table.php');
-  const tableHtml = await response.json();
+  const tableHtml = await response.text();
   return tableHtml;
 }
 function setupTable(data){

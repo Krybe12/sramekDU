@@ -36,11 +36,11 @@ class Tablinator{
     $this->data .= count($result) . " rows in set";
   }
   public function echoTable(){
-    return json_encode($this->data);
+    return $this->data;
   }
 }
 $result = $conn->query("select * from people;");
-if (!$result->rowCount()) {echo json_encode("empty set"); return;};
+if (!$result->rowCount()) {echo "empty set"; return;};
 $table = new Tablinator($result->fetchAll());
 echo $table->echoTable();
 ?>
