@@ -56,11 +56,42 @@ function setupTable(data){
   });
 }
 function editRow(id){
-  const row = [...document.querySelector(`tr[data-id="${id}"]`).querySelectorAll('td')].slice(1, -1);
-  types = ["text", "text", "number"];
+  const row = [...document.querySelector(`tr[data-id="${id}"]`).querySelectorAll('td')].slice(1);
+  const btnTd = row.pop();
+  const types = ["text", "text", "number"];
+  const elementsIds = ["firstName", "lastName", "age"];
+  
   for (let i = 0; i < row.length; i++) {
-    row[i].innerHTML = `<input type='${types[i]}' class='input is-small' style='max-width: 80px' value=${row[i].innerText}>`
+    row[i].innerHTML = `<input type='${types[i]}' id='${elementsIds[i]}'class='input is-small' style='max-width: 80px' value=${row[i].innerText}>`
   }
+  btnTd.removeChild(btnTd.children[0]);
+  btnTd.prepend(createSaveBtn());
+  addbtnEvent(elementsIds, id);
+}
+function addbtnEvent(ids, userID){
+  let btn = document.getElementById("btn-save");
+  btn.addEventListener("click", e => {
+    const data = new FormData();
+    ids.forEach(element => {
+      data.append(element, document.getElementById(element).value);
+    });
+    data.append('id', userID);
+    sendEdit(data);
+  })
+}
+function createSaveBtn(){
+  let button = document.createElement("button");
+  button.innerText = "S";
+  button.className = "button is-small is-success";
+  button.id = "btn-save";
+  return button
+}
+async function sendEdit(data){
+  await fetch('update.php', {
+    method: 'POST',
+    body: data
+  })
+  await main();
 }
 async function deleteRow(userID){
   const data = new FormData();
