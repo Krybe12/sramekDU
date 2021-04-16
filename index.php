@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
 <body>
-  <div id="form" style="min-width: 200px; max-width: 20vw">
+  <div id="form" style="min-width: 300px; max-width: 20vw">
     <form action="save.php" method="post">
       <input type="text" class="input" name="fname" placeholder="first name" autocomplete="off" required>
       <input type="text" class="input" name="lname" placeholder="last name" autocomplete="off" required>
@@ -62,7 +62,7 @@ function editRow(id){
   const elementsIds = ["firstName", "lastName", "age"];
   
   for (let i = 0; i < row.length; i++) {
-    row[i].innerHTML = `<input type='${types[i]}' id='${elementsIds[i]}'class='input is-small' style='max-width: 80px' value=${row[i].innerText}>`
+    row[i].innerHTML = `<input type='${types[i]}' id='${elementsIds[i]}'class='input is-small' style='max-width: 60px' value=${row[i].innerText}>`
   }
   btnTd.removeChild(btnTd.children[0]);
   btnTd.prepend(createSaveBtn());
