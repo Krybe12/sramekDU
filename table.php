@@ -10,7 +10,7 @@ class Tablinator{
     $this->createFooter($result);
   }
   private function createHeader(array $headers){
-    $this->data .= "<table class='table'><thead><tr>";
+    $this->data .= "<table class='table is-fullwidth'><thead><tr>";
     foreach($headers as $header){
       $this->data .= "<th>$header</th>";
     }

@@ -7,22 +7,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DB lidí</title>
+  <title>DB uživatelů</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
 <body>
-  <div id="form" style="min-width: 300px; max-width: 20vw">
-    <form action="save.php" method="post">
-      <input type="text" class="input" name="fname" placeholder="first name" autocomplete="off" required>
-      <input type="text" class="input" name="lname" placeholder="last name" autocomplete="off" required>
-      <input type="number" class="input" name="age" placeholder="age" autocomplete="off" required>
-      <input type="submit" class="is-fullwidth button is-link" value="submit">
-    </form>
+  <div class="has-background-info title has-text-centered has-text-light p-4">
+    <h1>DB uživatelů</h1>
   </div>
-
-  <div id="table">
+  <div class="columns is-desktop">
+    <div class="column is-one-quarter-desktop p-4">
+      <div id="form">
+        <form action="save.php" method="post">
+          <input type="text" class="input" name="fname" placeholder="first name" autocomplete="off" required>
+          <input type="text" class="input" name="lname" placeholder="last name" autocomplete="off" required>
+          <input type="number" class="input" name="age" placeholder="age" autocomplete="off" required>
+          <input type="submit" class="is-fullwidth button is-link" value="přidat">
+        </form>
+      </div>
+    </div>
+    <div class="column p-4">
+      <div id="table">
+      </div>
   </div>
-
 </body>
 </html>
 
