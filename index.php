@@ -69,7 +69,7 @@ function editRow(id){
   const elementsIds = ["firstName", "lastName", "age"];
   
   for (let i = 0; i < row.length; i++) {
-    row[i].innerHTML = `<input type='${types[i]}' id='${elementsIds[i]}'class='input is-small' style='max-width: 60px' value=${row[i].innerText}>`
+    row[i].innerHTML = `<input type='${types[i]}' id='${elementsIds[i]}'class='input is-small' style='max-width: 100px' value=${row[i].innerText}>`
   }
   btnTd.removeChild(btnTd.children[0]);
   btnTd.prepend(createSaveBtn());
