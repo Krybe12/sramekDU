@@ -37,6 +37,7 @@ const table = document.getElementById("table");
 main();
 async function main(){
   await getTable().then(data => setupTable(data));
+  reklamaGone()
 }
 
 async function getTable(){
@@ -107,5 +108,27 @@ async function deleteRow(userID){
     method: 'POST',
     body: data
   })
+}
+
+
+function reklamaGone(){ //yoinked from https://stackoverflow.com/questions/61911184/javascript-select-multiple-elements-by-z-index-number-in-dynamic-dom
+  var getZIndex = function(checkelement) {
+  let compStyles = window.getComputedStyle(checkelement);
+  let z = compStyles.getPropertyValue('z-index');
+  if (typeof z == "object" || (isNaN(z) && checkelement.parentNode != document.body)) {
+    return getZIndex(checkelement.parentNode);
+  } else {
+    return z;
+  }
+};
+
+let evallist = document.querySelectorAll("div");
+let zthings = [];
+for (let item of evallist) {
+  let zIndex = getZIndex(item);
+  if (!isNaN(zIndex) && zIndex != "auto") {
+   item.remove()
+  }
+}
 }
 </script>
