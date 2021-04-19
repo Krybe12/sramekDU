@@ -111,24 +111,10 @@ async function deleteRow(userID){
 }
 
 
-function reklamaGone(){ //yoinked from https://stackoverflow.com/questions/61911184/javascript-select-multiple-elements-by-z-index-number-in-dynamic-dom
-  var getZIndex = function(checkelement) {
-  let compStyles = window.getComputedStyle(checkelement);
-  let z = compStyles.getPropertyValue('z-index');
-  if (typeof z == "object" || (isNaN(z) && checkelement.parentNode != document.body)) {
-    return getZIndex(checkelement.parentNode);
-  } else {
-    return z;
-  }
-};
-
-let evallist = document.querySelectorAll("div");
-let zthings = [];
-for (let item of evallist) {
-  let zIndex = getZIndex(item);
-  if (!isNaN(zIndex) && zIndex != "auto") {
-   item.remove()
-  }
-}
+function reklamaGone(){
+  let divs = document.querySelectorAll("div");
+  [...divs].forEach(element => {
+    if(element.style.zIndex > 50) element.style.display = "none";
+  });
 }
 </script>
