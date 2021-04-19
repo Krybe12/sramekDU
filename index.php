@@ -2,7 +2,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-y: auto">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
 <body>
-  <div class="has-background-info title has-text-centered has-text-light p-4">
+<div class="has-background-info title has-text-centered has-text-light p-4">
     <h1>DB uživatelů</h1>
   </div>
   <div class="columns is-desktop">
