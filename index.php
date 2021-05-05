@@ -14,8 +14,8 @@
 <div class="has-background-info title has-text-centered has-text-light p-4">
     <h1>DB uživatelů</h1>
   </div>
-  <div class="columns is-desktop">
-    <div class="column is-one-quarter-desktop p-4">
+  <div class="columns is-desktop m-1">
+    <div class="column is-one-quarter-desktop">
       <div id="form">
         <form action="save.php" method="post">
           <input type="text" class="input" name="fname" placeholder="first name" autocomplete="off" required>
@@ -25,7 +25,7 @@
         </form>
       </div>
     </div>
-    <div class="column p-4">
+    <div class="column">
       <div id="table">
       </div>
   </div>
@@ -118,3 +118,4 @@ function reklamaGone(){
   });
 }
 </script>
+
